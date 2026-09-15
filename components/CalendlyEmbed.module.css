@@ -1,0 +1,14 @@
+.placeholder {
+  border: 1px dashed var(--black);
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.02);
+  max-width: 760px;
+}
+.placeholder :global(.preview-label) {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  border-left: 3px solid var(--black);
+  padding: 8px 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+}

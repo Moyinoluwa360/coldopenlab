@@ -1,0 +1,66 @@
+/* Six-column grid; the two co-founders span wider, matching the wireframe. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 42px 26px;
+  margin-top: 38px;
+}
+.card {
+  grid-column: span 2;
+  min-width: 0;
+}
+.card:nth-child(-n + 2) {
+  grid-column: span 3;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--black);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.img {
+  object-fit: cover;
+}
+.index {
+  font-size: clamp(50px, 8vw, 105px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--blue);
+}
+
+.role {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 20px 0 8px;
+  font-weight: 700;
+}
+.name {
+  font-size: clamp(23px, 2.4vw, 32px);
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+.bio {
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .card,
+  .card:nth-child(-n + 2) {
+    grid-column: auto;
+  }
+  .photo {
+    max-width: 440px;
+  }
+}

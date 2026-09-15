@@ -1,0 +1,56 @@
+.wrap {
+  border: 1px solid var(--black);
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid var(--black);
+  background: rgba(0, 0, 0, 0.03);
+}
+.tool {
+  border: 1px solid var(--black);
+  background: var(--white);
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 34px;
+}
+.toolActive {
+  background: var(--blue);
+}
+.editable {
+  min-height: 240px;
+  padding: 16px;
+  outline: none;
+}
+.editable :global(h2) {
+  font-size: 24px;
+  margin: 18px 0 8px;
+}
+.editable :global(h3) {
+  font-size: 20px;
+  margin: 16px 0 6px;
+}
+.editable :global(p) {
+  margin: 0 0 12px;
+}
+.editable :global(ul),
+.editable :global(ol) {
+  padding-left: 22px;
+}
+.editable :global(blockquote) {
+  border-left: 3px solid var(--blue);
+  padding-left: 14px;
+  margin: 12px 0;
+  color: var(--ink-60);
+}
+.editable :global(a) {
+  text-decoration: underline;
+}
+.loading {
+  padding: 16px;
+  border: 1px solid var(--black);
+  color: var(--ink-60);
+}

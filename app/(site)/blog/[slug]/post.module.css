@@ -1,0 +1,52 @@
+.hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--black);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.heroImg {
+  object-fit: cover;
+}
+
+/* Rich-text body — comfortable measure and vertical rhythm. */
+.body {
+  max-width: 70ch;
+}
+.body :global(h2) {
+  font-size: var(--step-h3);
+  margin: 40px 0 12px;
+}
+.body :global(h3) {
+  font-size: 21px;
+  margin: 32px 0 10px;
+}
+.body :global(p) {
+  margin: 0 0 20px;
+}
+.body :global(ul),
+.body :global(ol) {
+  margin: 0 0 20px;
+  padding-left: 22px;
+}
+.body :global(li) {
+  margin: 0 0 8px;
+}
+.body :global(a) {
+  text-decoration: underline;
+}
+.body :global(blockquote) {
+  border-left: 3px solid var(--blue);
+  margin: 24px 0;
+  padding: 4px 0 4px 20px;
+  font-size: 20px;
+}
+.body :global(img) {
+  border: 1px solid var(--black);
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 50px 0 40px;
+}

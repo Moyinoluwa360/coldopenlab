@@ -1,0 +1,86 @@
+.footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 60px 7vw 30px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+.brand {
+  font-size: 30px;
+}
+.brand :global(span:last-child) {
+  color: var(--white);
+}
+.about {
+  max-width: 500px;
+}
+.contact {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.contact p {
+  margin: 0 0 8px;
+}
+.contact a {
+  text-decoration: underline;
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+}
+.heading {
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+}
+.newsletter label {
+  display: block;
+  font-size: 14px;
+  margin: 20px 0 10px;
+  font-weight: 700;
+}
+.subscribeRow {
+  display: flex;
+  gap: 10px;
+}
+.subscribeRow input {
+  margin: 0;
+  min-width: 0;
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 0;
+  padding: 13px;
+  color: var(--black);
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 45px;
+  padding-top: 24px;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .footer {
+    padding: 44px 6vw 25px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .subscribeRow {
+    flex-direction: column;
+  }
+  .subscribeRow .button {
+    justify-content: center;
+  }
+}

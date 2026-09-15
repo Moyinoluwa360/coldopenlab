@@ -1,0 +1,19 @@
+.brand {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 250px;
+}
+.brand span {
+  display: block;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: var(--blue);
+  margin-left: 5px;
+}
