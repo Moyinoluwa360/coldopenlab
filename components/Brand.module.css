@@ -1,8 +1,8 @@
 .brand {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -1px;
+  line-height: 0.95;
+  letter-spacing: -0.07em;
   text-decoration: none;
   display: inline-block;
   max-width: 250px;
@@ -12,8 +12,10 @@
 }
 .dot {
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: var(--blue);
-  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 25%, #fff, var(--blue) 55%, #08699e);
+  box-shadow: 0 0 20px rgba(38, 178, 249, 0.3);
+  margin-left: 8px;
 }

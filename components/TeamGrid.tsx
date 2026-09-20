@@ -28,7 +28,7 @@ export function TeamGrid({ members }: { members: TeamMember[] }) {
           </div>
           <p className={styles.role}>{member.role}</p>
           <h3 className={styles.name}>{member.name}</h3>
-          <p className={styles.bio}>{member.bio}</p>
+          {member.bio && <p className={styles.bio}>{member.bio}</p>}
         </article>
       ))}
     </div>

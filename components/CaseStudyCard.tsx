@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/types";
 
-export function CaseStudyCard({ study }: { study: CaseStudy }) {
+export function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; index?: number }) {
   return (
     <article className="case-card">
+      <div className="case-visual" aria-hidden="true">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+      </div>
       <p className="eyebrow">{study.clientCategory}</p>
       <h3>{study.title}</h3>
       <p>{study.summary}</p>

@@ -15,12 +15,17 @@ export default async function LoginPage({
   if (user) redirect(safeFrom(searchParams.from));
 
   return (
-    <div className={styles.main} style={{ maxWidth: 440, margin: "0 auto" }}>
-      <h1 style={{ fontSize: 32, marginBottom: 8 }}>Cold Open Lab admin</h1>
-      <p className="muted" style={{ marginBottom: 24 }}>
-        Sign in to manage blog posts, case studies, testimonials and team members.
-      </p>
-      <LoginForm from={safeFrom(searchParams.from)} />
+    <div className={styles.loginShell}>
+      <div className={styles.loginCard}>
+        <span className={styles.brand}>
+          Cold Open Lab<i aria-hidden="true" />
+        </span>
+        <h1 style={{ fontSize: 30, margin: "18px 0 8px", letterSpacing: "-0.03em" }}>Admin sign-in</h1>
+        <p className="muted" style={{ marginBottom: 8 }}>
+          Manage blog posts, case studies, testimonials, team members and enquiries.
+        </p>
+        <LoginForm from={safeFrom(searchParams.from)} />
+      </div>
     </div>
   );
 }

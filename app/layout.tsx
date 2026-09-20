@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
+import { MailchimpPopup } from "@/components/MailchimpPopup";
 import { PAGE_META, SITE_NAME, getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Analytics />
+        <MailchimpPopup />
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const CAPABILITIES = [
   {
     h: "Brand messaging",
-    p: "Make what you offer clear and consistent wherever people encounter your business.",
+    p: "Make what you offer clear and consistent wherever prospective customers encounter your business.",
   },
   {
     h: "Website copy",
@@ -129,7 +129,7 @@ export default function ServicesPage() {
           <h2>Give your campaign a clear goal and a team to deliver it.</h2>
           <p>
             Promoting an offer or planning a launch? We connect the message, content and agreed
-            channels around what you want people to do.
+            channels around what you want prospective customers to do.
           </p>
           <div className="sales-grid three-up">
             <article className="sales-card">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               <h3>Review &amp; follow-up</h3>
               <p>
                 Use the response to adjust the campaign and continue the conversation with
-                interested people.
+                interested prospects.
               </p>
             </article>
           </div>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
           <div className="sales-grid three-up">
             <article className="sales-card">
               <h3>Before</h3>
-              <p>Give people a reason to attend and the information they need to take part.</p>
+              <p>Give prospective attendees a reason to attend and the information they need to take part.</p>
             </article>
             <article className="sales-card">
               <h3>During</h3>

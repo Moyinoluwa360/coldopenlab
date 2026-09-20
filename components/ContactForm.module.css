@@ -1,0 +1,80 @@
+.wrap {
+  max-width: 860px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.field {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+.help {
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+  margin: 3px 0 8px;
+  color: var(--ink-60);
+}
+.field input:not([type="checkbox"]),
+.field textarea,
+.wrap textarea {
+  display: block;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid #9bb7c8;
+  border-radius: 10px;
+  padding: 13px;
+  margin-top: 7px;
+  font-weight: 400;
+}
+.field textarea {
+  resize: vertical;
+}
+.fieldset {
+  border: 1px solid #9bb7c8;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 5px 0 25px;
+  min-width: 0;
+}
+.fieldset legend {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 6px;
+}
+.checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.checks label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+}
+.checks input {
+  accent-color: var(--black);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.formError {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b00020;
+}
+
+@media (max-width: 600px) {
+  .grid,
+  .checks {
+    grid-template-columns: 1fr;
+  }
+}

@@ -12,6 +12,11 @@ export interface BlogPost {
   published: boolean;
   featuredImageUrl: string;
   featuredImageAlt: string;
+  /** SEO overrides. Fall back to title/excerpt when blank. */
+  metaTitle?: string;
+  metaDescription?: string;
+  /** ISO datetime string set from the Firestore server timestamp. */
+  updatedAt?: string;
 }
 
 export interface CaseStudy {
@@ -26,6 +31,11 @@ export interface CaseStudy {
   published: boolean;
   heroImageUrl: string;
   heroImageAlt: string;
+  /** SEO overrides. Fall back to title/summary when blank. */
+  metaTitle?: string;
+  metaDescription?: string;
+  /** ISO datetime string set from the Firestore server timestamp. */
+  updatedAt?: string;
 }
 
 export interface Testimonial {
@@ -45,6 +55,22 @@ export interface TeamMember {
   photoUrl: string;
   photoAlt: string;
   order: number;
+}
+
+export interface Enquiry {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  business: string;
+  description: string;
+  customers: string;
+  marketing: string[];
+  website: string;
+  help: string;
+  viewed: boolean;
+  /** ISO date string */
+  createdAt: string;
 }
 
 export type ContentType = "blog" | "case-studies" | "testimonials" | "team";

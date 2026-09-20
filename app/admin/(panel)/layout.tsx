@@ -20,7 +20,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         </Link>
         <AdminNav />
         <span className={styles.spacer} />
-        <Link href="/" className={styles.nav} target="_blank" style={{ fontSize: 15 }}>
+        <Link href="/" className={styles.viewSite} target="_blank">
           View site ↗
         </Link>
         <LogoutButton />

@@ -32,8 +32,8 @@ export default async function CaseStudiesPage() {
         <div className="container">
           {studies.length > 0 ? (
             <div className="case-grid">
-              {studies.map((study) => (
-                <CaseStudyCard key={study.id} study={study} />
+              {studies.map((study, i) => (
+                <CaseStudyCard key={study.id} study={study} index={i} />
               ))}
             </div>
           ) : (

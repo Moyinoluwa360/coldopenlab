@@ -18,11 +18,11 @@ export const revalidate = 300;
 const REASONS = [
   {
     h: "Get found by new customers.",
-    p: "Reach people beyond your existing contacts through useful content and tested marketing channels.",
+    p: "Reach prospective customers beyond your existing contacts through useful content and tested marketing channels.",
   },
   {
     h: "Give prospects confidence.",
-    p: "Put clear service information and evidence of your work where people can find it.",
+    p: "Put clear service information and evidence of your work where prospective clients can find it.",
   },
   {
     h: "Stay in the conversation.",
@@ -43,23 +43,48 @@ export default async function HomePage() {
   return (
     <>
       <section className="section section--hero section--dark">
-        <div className="container">
-          <p className="eyebrow">Brand, marketing &amp; communications</p>
-          <h1>Make your business easier to find. Give people a reason to choose it.</h1>
-          <p className="lead">
-            Get your brand, marketing and communications managed by one team. Cold Open Lab
-            connects your messaging, website content, social media, blogs, PR and email to help
-            people find, trust and choose your business.
-          </p>
-          <p>
+        <div className="container home-hero-layout">
+          <div className="home-hero-copy">
+            <p className="eyebrow">Brand, marketing &amp; communications</p>
+            <h1>Make your business easier to find. Give customers a reason to choose it.</h1>
+            <p className="lead">
+              Get your brand, marketing and communications managed by one team. Cold Open Lab
+              connects your messaging, website content, social media, blogs, PR and email to help
+              prospective clients and customers find, trust and choose your business.
+            </p>
             <Link className="button button--dark" href="/contact">
               Book a discovery call <span aria-hidden="true">↗</span>
             </Link>
-          </p>
-          <Link className="text-link" href="/services">
-            Explore our services <span aria-hidden="true">↗</span>
-          </Link>
-          <p className="small muted">For B2B businesses and consumer and lifestyle brands.</p>
+            <Link className="text-link" href="/services">
+              Explore our services <span aria-hidden="true">↗</span>
+            </Link>
+            <p className="small muted">For B2B businesses and consumer and lifestyle brands.</p>
+          </div>
+          <div className="brand-composition" aria-hidden="true">
+            <div className="orbital" />
+            <div className="orbital orbital-two" />
+            <div className="light-core" />
+            <div className="glass-sheet sheet-back">
+              <span className="sheet-index">01</span>
+              <strong>Brand.</strong>
+              <span className="sheet-rule" />
+              <span className="sheet-rule short" />
+            </div>
+            <div className="glass-sheet sheet-mid">
+              <span className="sheet-index">02</span>
+              <strong>Marketing.</strong>
+              <span className="sheet-rule" />
+              <span className="sheet-rule short" />
+            </div>
+            <div className="glass-sheet sheet-front">
+              <span className="sheet-index">03</span>
+              <strong>Communications.</strong>
+              <span className="sheet-rule" />
+              <span className="sheet-rule short" />
+            </div>
+            <span className="composition-foot">ONE CONNECTED DIRECTION</span>
+            <span className="composition-star">✳</span>
+          </div>
         </div>
       </section>
 
@@ -99,8 +124,8 @@ export default async function HomePage() {
               <p className="eyebrow">02 / Campaign management</p>
               <h3>Give your next offer a clear route to customers.</h3>
               <p>
-                Campaign strategy, content and coordination built around the action you want people
-                to take.
+                Campaign strategy, content and coordination built around the action you want
+                prospective customers to take.
               </p>
               <Link className="text-link" href="/services#campaigns">
                 See campaign management <span aria-hidden="true">↗</span>
@@ -127,8 +152,8 @@ export default async function HomePage() {
           <h2>See how the work takes shape.</h2>
           {caseStudies.length > 0 ? (
             <div className="case-grid">
-              {caseStudies.slice(0, 2).map((study) => (
-                <CaseStudyCard key={study.id} study={study} />
+              {caseStudies.slice(0, 2).map((study, i) => (
+                <CaseStudyCard key={study.id} study={study} index={i} />
               ))}
             </div>
           ) : (

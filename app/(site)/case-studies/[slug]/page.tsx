@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { content } from "@/lib/content";
 import { RichText } from "@/components/RichText";
+import { SITE_NAME, getSiteUrl } from "@/lib/site";
 import styles from "./case.module.css";
 
 export const revalidate = 300;
@@ -13,21 +14,24 @@ type Props = { params: { slug: string } };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const study = await content.caseStudy(params.slug);
   if (!study) return { title: "Case study not found" };
+  const title = study.metaTitle || study.title;
+  const description = study.metaDescription || study.summary;
   return {
-    title: study.title,
-    description: study.summary,
+    title,
+    description,
     alternates: { canonical: `/case-studies/${study.slug}` },
     openGraph: {
       type: "article",
-      title: study.title,
-      description: study.summary,
+      title,
+      description,
       url: `/case-studies/${study.slug}`,
+      modifiedTime: study.updatedAt || undefined,
       images: study.heroImageUrl ? [{ url: study.heroImageUrl }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
-      title: study.title,
-      description: study.summary,
+      title,
+      description,
       images: study.heroImageUrl ? [study.heroImageUrl] : undefined,
     },
   };
@@ -37,8 +41,25 @@ export default async function CaseStudyPage({ params }: Props) {
   const study = await content.caseStudy(params.slug);
   if (!study || !study.published) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.title,
+    description: study.metaDescription || study.summary,
+    image: study.heroImageUrl || undefined,
+    dateModified: study.updatedAt || undefined,
+    author: { "@type": "Organization", name: SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME },
+    mainEntityOfPage: `${getSiteUrl()}/case-studies/${study.slug}`,
+  };
+
   return (
     <article>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <section className="section section--hero">
         <div className="container">
           <p className="eyebrow">{study.clientCategory}</p>

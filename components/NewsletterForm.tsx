@@ -5,7 +5,8 @@ import styles from "./Footer.module.css";
 
 /**
  * Visual-only newsletter signup. Per the brief, this is NOT wired to any email
- * provider yet — it deliberately does not send anything.
+ * provider yet — it deliberately does not send anything. Independent of the
+ * contact enquiry form; both require a name and email address.
  * TODO: client to provide — connect to the chosen email/newsletter service.
  */
 export function NewsletterForm() {
@@ -19,19 +20,19 @@ export function NewsletterForm() {
         setSubmitted(true);
       }}
     >
-      <label htmlFor="newsletter-email">Email address</label>
-      <div className={styles.subscribeRow}>
-        <input
-          type="email"
-          id="newsletter-email"
-          name="email"
-          required
-          autoComplete="email"
-        />
-        <button className="button button--dark" type="submit">
-          Subscribe
-        </button>
+      <div className={styles.newsletterFields}>
+        <label htmlFor="newsletter-name">
+          Your name
+          <input type="text" id="newsletter-name" name="name" required autoComplete="name" />
+        </label>
+        <label htmlFor="newsletter-email">
+          Email address
+          <input type="email" id="newsletter-email" name="email" required autoComplete="email" />
+        </label>
       </div>
+      <button className="button button--dark" type="submit">
+        Subscribe
+      </button>
       <p className="small">
         Subscribe to receive emails from Cold Open Lab. You can unsubscribe at any time.
       </p>

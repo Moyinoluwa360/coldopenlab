@@ -1,25 +1,28 @@
 .footer {
-  background: var(--black);
+  background: radial-gradient(ellipse at bottom left, #0c3048, transparent 50%), #03080c;
   color: var(--white);
-  padding: 60px 7vw 30px;
+  padding: 75px 6vw 30px;
 }
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  gap: 100px;
 }
 .brand {
-  font-size: 30px;
+  font-size: 34px;
 }
 .brand :global(span:last-child) {
   color: var(--white);
 }
 .about {
   max-width: 500px;
+  color: #bfd1dc;
+  font-size: 16px;
 }
 .contact {
   margin-top: 20px;
   font-size: 14px;
+  color: #9eb6c5;
 }
 .contact p {
   margin: 0 0 8px;
@@ -34,7 +37,7 @@
   margin-top: 4px;
 }
 .heading {
-  font-size: 32px;
+  font-size: 35px;
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin: 0 0 20px;
@@ -42,31 +45,50 @@
 .newsletter label {
   display: block;
   font-size: 14px;
-  margin: 20px 0 10px;
+  margin: 0;
   font-weight: 700;
+}
+.newsletterFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.newsletterFields input {
+  margin-top: 8px;
+  min-width: 0;
 }
 .subscribeRow {
   display: flex;
   gap: 10px;
 }
+.subscribeRow input,
+.newsletterFields input {
+  background: #0f202c;
+  border: 1px solid #375064;
+  border-radius: 10px;
+  padding: 13px;
+  color: var(--white);
+}
 .subscribeRow input {
   margin: 0;
   min-width: 0;
   flex: 1;
-  background: var(--white);
-  border: 1px solid var(--black);
-  border-radius: 0;
-  padding: 13px;
-  color: var(--black);
+}
+.subscribeRow .button {
+  box-shadow: none;
+  min-width: 150px;
+  justify-content: center;
 }
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid #203849;
   margin-top: 45px;
   padding-top: 24px;
   font-size: 14px;
+  color: #bed2de;
 }
 
 @media (max-width: 760px) {
@@ -77,10 +99,13 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .newsletterFields {
+    grid-template-columns: 1fr;
+  }
   .subscribeRow {
     flex-direction: column;
   }
   .subscribeRow .button {
-    justify-content: center;
+    width: 100%;
   }
 }

@@ -20,7 +20,7 @@ export default async function AboutPage() {
       <section className="section section--hero section--dark">
         <div className="container">
           <p className="eyebrow">About Cold Open Lab</p>
-          <h1>Your next customer should be able to see what makes you worth choosing.</h1>
+          <h1>Your next client should be able to see what makes you worth choosing.</h1>
           <p className="lead">
             We help B2B businesses and consumer and lifestyle brands make their value clear through
             the way they show up and communicate.
@@ -37,8 +37,8 @@ export default async function AboutPage() {
             the agreed work across channels.
           </p>
           <p>
-            For your team, it means having people who understand the business and take
-            responsibility for moving its communications forward.
+            For your team, it means having a marketing and communications team who understand the
+            business and take responsibility for moving its communications forward.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default async function AboutPage() {
         <div className="container">
           <h2>Meet the Icebreakers</h2>
           <p>
-            The people getting to know your business, shaping the content and checking the work
+            The team getting to know your business, shaping the content and checking the work
             before it reaches your audience.
           </p>
           <TeamGrid members={team} />

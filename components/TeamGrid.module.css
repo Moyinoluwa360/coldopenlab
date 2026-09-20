@@ -16,22 +16,36 @@
 .photo {
   position: relative;
   aspect-ratio: 3 / 4;
-  border: 1px solid var(--black);
-  background: var(--white);
+  border: 1px solid #bcdff1;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 70% 20%, #fff, transparent 60%),
+    linear-gradient(145deg, #e3f5ff, #a6dcf9);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
+.photo::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+  transform: rotate(25deg) scaleX(0.7);
+}
 .img {
   object-fit: cover;
+  border-radius: 18px;
 }
 .index {
-  font-size: clamp(50px, 8vw, 105px);
+  position: relative;
+  z-index: 1;
+  font-size: clamp(50px, 8vw, 100px);
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 1;
-  color: var(--blue);
+  color: #17344b;
 }
 
 .role {
@@ -40,9 +54,10 @@
   letter-spacing: 1px;
   margin: 20px 0 8px;
   font-weight: 700;
+  color: #335d74;
 }
 .name {
-  font-size: clamp(23px, 2.4vw, 32px);
+  font-size: clamp(23px, 2.4vw, 29px);
   margin: 0 0 12px;
   overflow-wrap: anywhere;
 }

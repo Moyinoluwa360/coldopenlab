@@ -6,10 +6,7 @@ import styles from "../../app/admin/admin.module.css";
 
 const LINKS = [
   { href: "/admin", label: "Dashboard" },
-  { href: "/admin/blog", label: "Blog" },
-  { href: "/admin/case-studies", label: "Case studies" },
-  { href: "/admin/testimonials", label: "Testimonials" },
-  { href: "/admin/team", label: "Team" },
+  { href: "/admin/enquiries", label: "Enquiries" },
 ];
 
 export function AdminNav() {

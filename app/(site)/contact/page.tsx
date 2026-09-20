@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PAGE_META } from "@/lib/site";
-import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_META.contact.title },
@@ -16,16 +16,19 @@ export default function ContactPage() {
           <p className="eyebrow">Book a discovery call</p>
           <h1>Tell us what is happening in your business.</h1>
           <p className="lead">
-            Choose a discovery-call time that works for you. We&rsquo;ll discuss your current
-            communications, the customers you want to reach and where Cold Open Lab could help.
+            Share a few details about your business and the support you need. Once you submit the
+            form, you can choose a discovery-call time that works for you.
           </p>
-          <p>Have any useful website links, examples or questions ready for the conversation.</p>
+          <p>
+            We&rsquo;ll discuss your current communications, the clients or customers you want to
+            reach and where Cold Open Lab could help.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <CalendlyEmbed />
+          <ContactForm />
         </div>
       </section>
     </>
