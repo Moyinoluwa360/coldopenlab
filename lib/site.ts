@@ -16,7 +16,7 @@ export function getSiteUrl(): string {
 /** Titles + descriptions per route, from the wireframe's pageMeta. */
 export const PAGE_META = {
   home: {
-    title: "Brand & Marketing Communications Agency | Cold Open Lab",
+    title: "Cold Open Lab | Brand, Marketing and Communications Agency",
     description:
       "Complete brand, marketing and communications support for B2B, consumer and lifestyle businesses. Messaging, content, PR, email and campaigns managed together.",
   },
