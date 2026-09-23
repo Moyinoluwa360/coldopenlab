@@ -43,7 +43,7 @@ export function Header() {
           </Link>
         ))}
         <Link className={`button ${styles.cta}`} href="/contact" onClick={() => setOpen(false)}>
-          Book a discovery call <span aria-hidden="true">↗</span>
+          Book a discovery call <span aria-hidden="true">↗︎</span>
         </Link>
       </nav>
     </header>

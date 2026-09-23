@@ -41,7 +41,7 @@ export default async function CaseStudiesPage() {
               <h2>Case studies are coming soon.</h2>
               <p>We&rsquo;re preparing approved work samples to share here.</p>
               <Link className="button" href="/contact">
-                Book a discovery call <span aria-hidden="true">↗</span>
+                Book a discovery call <span aria-hidden="true">↗︎</span>
               </Link>
             </div>
           )}

@@ -168,7 +168,7 @@ export function ContactForm() {
 
         <button className="button" type="submit" disabled={submitting}>
           {submitting ? "Submitting…" : "Submit and choose a call time"}{" "}
-          <span aria-hidden="true">↗</span>
+          <span aria-hidden="true">↗︎</span>
         </button>
       </form>
     </div>

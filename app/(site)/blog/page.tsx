@@ -42,7 +42,7 @@ export default async function BlogIndexPage() {
                     <p className="small muted">{formatDate(post.publishDate)}</p>
                   )}
                   <Link className="text-link" href={`/blog/${post.slug}`}>
-                    Read article <span aria-hidden="true">↗</span>
+                    Read article <span aria-hidden="true">↗︎</span>
                   </Link>
                 </article>
               ))}
@@ -55,7 +55,7 @@ export default async function BlogIndexPage() {
                 call to talk through your messaging and content.
               </p>
               <Link className="button" href="/contact">
-                Book a discovery call <span aria-hidden="true">↗</span>
+                Book a discovery call <span aria-hidden="true">↗︎</span>
               </Link>
             </div>
           )}

@@ -76,7 +76,7 @@ export default function ServicesPage() {
           </p>
           <p>
             <Link className="button button--dark" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <div className="service-jump">
@@ -114,7 +114,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <p className="small muted">
@@ -150,7 +150,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <p className="small muted">Available as an individual project.</p>
@@ -181,7 +181,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <p className="small muted">Available as an individual project.</p>

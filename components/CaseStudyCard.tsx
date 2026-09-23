@@ -15,7 +15,7 @@ export function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; index?: 
       )}
       {study.workInProgress && <p className="case-status">Work in progress</p>}
       <Link className="text-link" href={`/case-studies/${study.slug}`}>
-        Read more <span aria-hidden="true">↗</span>
+        Read more <span aria-hidden="true">↗︎</span>
       </Link>
     </article>
   );

@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
           <p>Book a discovery call with Cold Open Lab to discuss your messaging and content.</p>
           <p>
             <Link className="button" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <p>

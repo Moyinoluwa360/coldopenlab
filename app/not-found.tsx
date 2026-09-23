@@ -12,7 +12,7 @@ export default function NotFound() {
         </p>
         <p>
           <Link className="button" href="/">
-            Back to home <span aria-hidden="true">↗</span>
+            Back to home <span aria-hidden="true">↗︎</span>
           </Link>
         </p>
         <p className="stack">

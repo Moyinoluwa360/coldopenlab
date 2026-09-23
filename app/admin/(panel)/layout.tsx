@@ -21,7 +21,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         <AdminNav />
         <span className={styles.spacer} />
         <Link href="/" className={styles.viewSite} target="_blank">
-          View site ↗
+          View site ↗︎
         </Link>
         <LogoutButton />
       </header>

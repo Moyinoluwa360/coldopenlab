@@ -53,10 +53,10 @@ export default async function HomePage() {
               prospective clients and customers find, trust and choose your business.
             </p>
             <Link className="button button--dark" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
             <Link className="text-link" href="/services">
-              Explore our services <span aria-hidden="true">↗</span>
+              Explore our services <span aria-hidden="true">↗︎</span>
             </Link>
             <p className="small muted">For B2B businesses and consumer and lifestyle brands.</p>
           </div>
@@ -83,7 +83,7 @@ export default async function HomePage() {
               <span className="sheet-rule short" />
             </div>
             <span className="composition-foot">ONE CONNECTED DIRECTION</span>
-            <span className="composition-star">✳</span>
+            <span className="composition-star">✳︎</span>
           </div>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default async function HomePage() {
               </p>
               <p className="offer-detail">Start with 90 days. Continue as your business needs.</p>
               <Link className="text-link" href="/services#ongoing-support">
-                See ongoing support <span aria-hidden="true">↗</span>
+                See ongoing support <span aria-hidden="true">↗︎</span>
               </Link>
             </article>
             <article className="offer-card">
@@ -128,7 +128,7 @@ export default async function HomePage() {
                 prospective customers to take.
               </p>
               <Link className="text-link" href="/services#campaigns">
-                See campaign management <span aria-hidden="true">↗</span>
+                See campaign management <span aria-hidden="true">↗︎</span>
               </Link>
             </article>
             <article className="offer-card">
@@ -139,7 +139,7 @@ export default async function HomePage() {
                 with leads.
               </p>
               <Link className="text-link" href="/services#events">
-                See event communications <span aria-hidden="true">↗</span>
+                See event communications <span aria-hidden="true">↗︎</span>
               </Link>
             </article>
           </div>
@@ -161,7 +161,7 @@ export default async function HomePage() {
           )}
           <p className="mt-4">
             <Link className="button button--dark" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
         </div>
@@ -193,7 +193,7 @@ export default async function HomePage() {
             website development is needed, we can bring in a partner.
           </p>
           <Link className="text-link" href="/services">
-            See what we handle <span aria-hidden="true">↗</span>
+            See what we handle <span aria-hidden="true">↗︎</span>
           </Link>
         </div>
       </section>

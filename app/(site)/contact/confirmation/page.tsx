@@ -19,7 +19,7 @@ export default function ConfirmationPage() {
         </p>
         <p>Calendly will send you a calendar invite with the date, time and meeting link.</p>
         <Link className="button" href="/blog">
-          Explore the blog <span aria-hidden="true">↗</span>
+          Explore the blog <span aria-hidden="true">↗︎</span>
         </Link>
       </div>
     </section>

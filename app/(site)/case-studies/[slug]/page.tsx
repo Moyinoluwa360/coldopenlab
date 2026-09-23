@@ -99,7 +99,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <p>Book a discovery call to talk through your brand, marketing and communications.</p>
           <p>
             <Link className="button" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗</span>
+              Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
           <p>
