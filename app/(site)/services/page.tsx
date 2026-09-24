@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PAGE_META } from "@/lib/site";
+import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { CtaSection } from "@/components/CtaSection";
 
 export const metadata: Metadata = {
@@ -75,7 +75,7 @@ export default function ServicesPage() {
             We also manage individual campaigns and event communications.
           </p>
           <p>
-            <Link className="button button--dark" href="/contact">
+            <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
@@ -89,7 +89,7 @@ export default function ServicesPage() {
 
       <section className="section" id="ongoing-support">
         <div className="container">
-          <p className="eyebrow">01 / Ongoing support</p>
+          <p className="eyebrow">Ongoing support</p>
           <h2>Your external marketing and communications team.</h2>
           <p>
             Get complete brand, marketing and communications support in one engagement. Brand
@@ -113,7 +113,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <p>
-            <Link className="button" href="/contact">
+            <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
 
       <section className="section" id="campaigns">
         <div className="container">
-          <p className="eyebrow">02 / Campaign management</p>
+          <p className="eyebrow">Campaign management</p>
           <h2>Give your campaign a clear goal and a team to deliver it.</h2>
           <p>
             Promoting an offer or planning a launch? We connect the message, content and agreed
@@ -149,17 +149,16 @@ export default function ServicesPage() {
             </article>
           </div>
           <p>
-            <Link className="button" href="/contact">
+            <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
-          <p className="small muted">Available as an individual project.</p>
         </div>
       </section>
 
       <section className="section" id="events">
         <div className="container">
-          <p className="eyebrow">03 / Event communications</p>
+          <p className="eyebrow">Event communications</p>
           <h2>Keep your event working after everyone goes home.</h2>
           <p>
             Build interest before the event and give attendees a reason to stay connected
@@ -180,11 +179,10 @@ export default function ServicesPage() {
             </article>
           </div>
           <p>
-            <Link className="button" href="/contact">
+            <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
           </p>
-          <p className="small muted">Available as an individual project.</p>
         </div>
       </section>
 

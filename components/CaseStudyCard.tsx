@@ -1,11 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/types";
 
 export function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; index?: number }) {
   return (
     <article className="case-card">
-      <div className="case-visual" aria-hidden="true">
-        <span>{String(index + 1).padStart(2, "0")}</span>
+      <div
+        className={`case-visual${study.heroImageUrl ? " case-visual--photo" : ""}`}
+        aria-hidden="true"
+      >
+        {study.heroImageUrl ? (
+          <Image
+            src={study.heroImageUrl}
+            alt={study.heroImageAlt || study.title}
+            fill
+            sizes="(max-width: 700px) 100vw, 560px"
+          />
+        ) : (
+          <span>{String(index + 1).padStart(2, "0")}</span>
+        )}
       </div>
       <p className="eyebrow">{study.clientCategory}</p>
       <h3>{study.title}</h3>

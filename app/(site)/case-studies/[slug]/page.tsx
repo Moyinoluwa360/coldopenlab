@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { content } from "@/lib/content";
 import { RichText } from "@/components/RichText";
-import { SITE_NAME, getSiteUrl } from "@/lib/site";
+import { CALENDLY_URL, SITE_NAME, getSiteUrl } from "@/lib/site";
 import styles from "./case.module.css";
 
 export const revalidate = 300;
@@ -41,6 +41,9 @@ export default async function CaseStudyPage({ params }: Props) {
   const study = await content.caseStudy(params.slug);
   if (!study || !study.published) notFound();
 
+  const allStudies = await content.caseStudies();
+  const moreStudies = allStudies.filter((s) => s.slug !== study.slug).slice(0, 3);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -60,15 +63,17 @@ export default async function CaseStudyPage({ params }: Props) {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <section className="section section--hero">
-        <div className="container">
-          <p className="eyebrow">{study.clientCategory}</p>
-          <h1>{study.title}</h1>
-          <p className="lead">{study.summary}</p>
-          {study.proofTags.length > 0 && (
-            <p className="proof-caption muted">{study.proofTags.join(" · ")}</p>
-          )}
-          {study.workInProgress && <p className="case-status">Work in progress</p>}
+      <section className="section" style={{ paddingBottom: "var(--space-4)" }}>
+        <div className={`container ${styles.headerCol}`}>
+          {study.clientCategory && <span className={styles.tag}>{study.clientCategory}</span>}
+          <h1 className={styles.title}>{study.title}</h1>
+          <p className={`lead ${styles.lead}`}>{study.summary}</p>
+          <div className={styles.metaRow}>
+            {study.proofTags.length > 0 && (
+              <p className="small muted">{study.proofTags.join(" · ")}</p>
+            )}
+            {study.workInProgress && <p className="case-status">Work in progress</p>}
+          </div>
         </div>
       </section>
 
@@ -92,23 +97,50 @@ export default async function CaseStudyPage({ params }: Props) {
           {study.bodyHtml ? (
             <RichText className={styles.body} html={study.bodyHtml} />
           ) : (
-            <p className="muted">The full write-up for this project is coming soon.</p>
+            <p className="muted" style={{ maxWidth: "70ch", margin: "0 auto", textAlign: "center" }}>
+              The full write-up for this project is coming soon.
+            </p>
           )}
-          <hr className={styles.rule} />
-          <h2>See how this could work for your business.</h2>
-          <p>Book a discovery call to talk through your brand, marketing and communications.</p>
-          <p>
-            <Link className="button" href="/contact">
+          <div className={styles.cta}>
+            <h2 className={styles.ctaTitle}>See how this could work for your business.</h2>
+            <p>Book a discovery call to talk through your brand, marketing and communications.</p>
+            <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
-          </p>
-          <p>
+          </div>
+          <p className={styles.backLink}>
             <Link className="text-link" href="/case-studies">
-              Back to case studies
+              ← Back to case studies
             </Link>
           </p>
         </div>
       </section>
+
+      {moreStudies.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--line)" }}>
+          <div className="container">
+            <h2 className={styles.moreHeading}>More case studies</h2>
+            <div className={styles.moreGrid}>
+              {moreStudies.map((s) => (
+                <Link key={s.id} href={`/case-studies/${s.slug}`} className={styles.moreCard}>
+                  <div className={styles.moreMedia}>
+                    {s.heroImageUrl && (
+                      <Image
+                        src={s.heroImageUrl}
+                        alt={s.heroImageAlt || s.title}
+                        fill
+                        sizes="(max-width: 700px) 100vw, 360px"
+                      />
+                    )}
+                  </div>
+                  {s.clientCategory && <span className="eyebrow">{s.clientCategory}</span>}
+                  <h3>{s.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </article>
   );
 }

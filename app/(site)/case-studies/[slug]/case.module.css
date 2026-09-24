@@ -1,20 +1,67 @@
+/* Header — centered narrow column instead of full-width left-aligned text. */
+.headerCol {
+  max-width: 760px;
+  text-align: center;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(38, 178, 249, 0.1);
+  border: 1px solid rgba(38, 178, 249, 0.35);
+  color: #175376;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+.title {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 4.6vw, 54px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  max-width: none;
+  margin: 0 auto var(--space-3);
+}
+.lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 16px;
+  margin-top: 18px;
+}
+
+/* Hero image */
 .hero {
   position: relative;
   aspect-ratio: 3 / 2;
-  border: 1px solid var(--black);
+  border-radius: 24px;
   overflow: hidden;
   margin-bottom: 10px;
+  background: linear-gradient(140deg, #eff9ff, #d7f1ff);
+  box-shadow: 0 30px 60px rgba(4, 20, 33, 0.14);
 }
 .heroImg {
-  object-fit: cover;
+  object-fit: contain;
 }
 
+/* Rich-text body — comfortable, centered measure. */
 .body {
   max-width: 70ch;
+  margin: 0 auto;
 }
 .body :global(h2) {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 600;
   font-size: var(--step-h3);
-  margin: 40px 0 12px;
+  margin: 44px 0 14px;
 }
 .body :global(p) {
   margin: 0 0 20px;
@@ -24,9 +71,81 @@
   margin: 0 0 20px;
   padding-left: 22px;
 }
+.body :global(blockquote) {
+  border-left: 3px solid var(--blue);
+  margin: 32px 0;
+  padding: 6px 0 6px 24px;
+  font-family: var(--font-editorial), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1.4;
+}
+.body :global(img) {
+  border-radius: 12px;
+}
 
-.rule {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 50px 0 40px;
+/* CTA callout */
+.cta {
+  max-width: 70ch;
+  margin: 56px auto 0;
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(130deg, var(--blue), #a6e3ff);
+  text-align: center;
+}
+.ctaTitle {
+  max-width: none;
+  margin: 0 0 10px;
+}
+.cta p {
+  max-width: 46ch;
+  margin: 0 auto 22px;
+}
+.backLink {
+  text-align: center;
+  margin-top: 26px;
+}
+
+.moreHeading {
+  margin-bottom: var(--space-4);
+}
+.moreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.moreCard {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.moreCard h3 {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 14px 0 0;
+}
+.moreMedia {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #eff9ff, #d7f1ff);
+}
+.moreMedia img {
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.moreCard:hover .moreMedia img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 760px) {
+  .moreGrid {
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    padding: 30px 24px;
+  }
 }

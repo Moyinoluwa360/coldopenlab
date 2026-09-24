@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Brand } from "./Brand";
-import { NAV_LINKS } from "@/lib/site";
+import { CALENDLY_URL, NAV_LINKS } from "@/lib/site";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -16,7 +17,10 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <Brand />
+      <Brand className={styles.brandDesktop} />
+      <Link href="/" className={styles.brandMobile} aria-label="Cold Open Lab home">
+        <Image src="/logo.png" alt="Cold Open Lab" width={60} height={60} priority />
+      </Link>
       <button
         type="button"
         className={styles.toggle}
@@ -42,7 +46,13 @@ export function Header() {
             {link.label}
           </Link>
         ))}
-        <Link className={`button ${styles.cta}`} href="/contact" onClick={() => setOpen(false)}>
+        <Link
+          className={`button ${styles.cta}`}
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+        >
           Book a discovery call <span aria-hidden="true">↗︎</span>
         </Link>
       </nav>

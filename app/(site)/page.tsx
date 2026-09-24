@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { content } from "@/lib/content";
-import { PAGE_META } from "@/lib/site";
+import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { CtaSection } from "@/components/CtaSection";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
@@ -52,7 +52,7 @@ export default async function HomePage() {
               connects your messaging, website content, social media, blogs, PR and email to help
               prospective clients and customers find, trust and choose your business.
             </p>
-            <Link className="button button--dark" href="/contact">
+            <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book a discovery call <span aria-hidden="true">↗︎</span>
             </Link>
             <Link className="text-link" href="/services">
@@ -159,11 +159,6 @@ export default async function HomePage() {
           ) : (
             <p className="muted">Case studies are on their way. Check back soon.</p>
           )}
-          <p className="mt-4">
-            <Link className="button button--dark" href="/contact">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
-            </Link>
-          </p>
         </div>
       </section>
 
@@ -200,7 +195,7 @@ export default async function HomePage() {
 
       <CtaSection
         heading="Give your business the marketing support it needs."
-        body="Book a discovery call to discuss what you want to achieve and where Cold Open Lab can help. Share a few details, then choose a time."
+        body="Book a discovery call to discuss what you want to achieve and where Cold Open Lab can help."
       />
     </>
   );

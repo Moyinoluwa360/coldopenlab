@@ -13,6 +13,13 @@ export function getSiteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
 }
 
+/**
+ * "Book a discovery call" buttons link straight to Calendly. Falls back to
+ * the on-site /contact form if Calendly isn't configured yet, so the button
+ * never breaks.
+ */
+export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL || "/contact";
+
 /** Titles + descriptions per route, from the wireframe's pageMeta. */
 export const PAGE_META = {
   home: {

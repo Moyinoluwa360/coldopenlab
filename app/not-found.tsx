@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CALENDLY_URL } from "@/lib/site";
 
 export default function NotFound() {
   return (
@@ -25,7 +26,7 @@ export default function NotFound() {
           <Link className="text-link" href="/blog">
             Blog
           </Link>{" "}
-          <Link className="text-link" href="/contact">
+          <Link className="text-link" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
             Book a discovery call
           </Link>
         </p>

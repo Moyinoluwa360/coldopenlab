@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
+import { Newsreader } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
 import { MailchimpPopup } from "@/components/MailchimpPopup";
 import { PAGE_META, SITE_NAME, getSiteUrl } from "@/lib/site";
+
+// Editorial display face used for blog/case-study headlines only — keeps the
+// rest of the site's Arial identity intact while giving long-form content
+// its own voice. Self-hosted at build time via next/font.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-editorial",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -27,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={newsreader.variable}>
       <body>
         {children}
         <Analytics />

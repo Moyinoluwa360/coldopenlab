@@ -38,14 +38,28 @@
   cursor: pointer;
 }
 
+.brandMobile {
+  display: none;
+  line-height: 0;
+}
+.brandMobile img {
+  border-radius: 8px;
+}
+
 @media (max-width: 760px) {
   .header {
-    padding: 20px 6vw;
+    padding: 14px 6vw;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 14px;
   }
   .toggle {
     display: block;
+  }
+  .brandDesktop {
+    display: none;
+  }
+  .brandMobile {
+    display: inline-block;
   }
   .nav {
     display: none;
