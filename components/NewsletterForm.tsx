@@ -13,53 +13,63 @@ export function NewsletterForm() {
   const [status, setStatus] = useState<Status>("idle");
 
   return (
-    <form
-      className={styles.newsletter}
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const form = e.currentTarget;
-        const data = new FormData(form);
-        setStatus("submitting");
-        try {
-          const res = await fetch("/api/newsletter", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: data.get("name"), email: data.get("email") }),
-          });
-          if (!res.ok) throw new Error("request failed");
-          setStatus("success");
-          form.reset();
-        } catch {
-          setStatus("error");
-        }
-      }}
-    >
-      <div className={styles.newsletterFields}>
-        <label htmlFor="newsletter-name">
-          Your name
-          <input type="text" id="newsletter-name" name="name" required autoComplete="name" />
-        </label>
-        <label htmlFor="newsletter-email">
-          Email address
-          <input type="email" id="newsletter-email" name="email" required autoComplete="email" />
-        </label>
-      </div>
-      <button className="button button--dark" type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? "Subscribing…" : "Subscribe"}
-      </button>
-      <p className="small">
-        Subscribe to receive emails from Cold Open Lab. You can unsubscribe at any time.
-      </p>
+    <>
+      <form
+        className={styles.newsletter}
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const form = e.currentTarget;
+          const data = new FormData(form);
+          setStatus("submitting");
+          try {
+            const res = await fetch("/api/newsletter", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name: data.get("name"), email: data.get("email") }),
+            });
+            if (!res.ok) throw new Error("request failed");
+            setStatus("success");
+            form.reset();
+          } catch {
+            setStatus("error");
+          }
+        }}
+      >
+        <div className={styles.newsletterFields}>
+          <label htmlFor="newsletter-name">
+            Your name
+            <input type="text" id="newsletter-name" name="name" required autoComplete="name" />
+          </label>
+          <label htmlFor="newsletter-email">
+            Email address
+            <input type="email" id="newsletter-email" name="email" required autoComplete="email" />
+          </label>
+        </div>
+        <button className="button button--dark" type="submit" disabled={status === "submitting"}>
+          {status === "submitting" ? "Subscribing…" : "Subscribe"}
+        </button>
+        <p className="small">
+          Subscribe to receive emails from Cold Open Lab. You can unsubscribe at any time.
+        </p>
+        {status === "error" && (
+          <p className="small" role="status">
+            Something went wrong. Please try again.
+          </p>
+        )}
+      </form>
+
       {status === "success" && (
-        <p className="small" role="status">
-          Thanks — you&rsquo;re on the list.
-        </p>
+        <div className={styles.popupOverlay} role="status">
+          <div className={styles.popup}>
+            <span className={styles.popupIcon}>&#10003;</span>
+            <h3>You&rsquo;re on the list!</h3>
+            <p>Thanks for subscribing. We&rsquo;ll be in touch with ideas worth bringing into your business.</p>
+            <button className="button" type="button" onClick={() => setStatus("idle")}>
+              Close
+            </button>
+          </div>
+        </div>
       )}
-      {status === "error" && (
-        <p className="small" role="status">
-          Something went wrong. Please try again.
-        </p>
-      )}
-    </form>
+    </>
   );
 }

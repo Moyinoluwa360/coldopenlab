@@ -91,6 +91,63 @@
   color: #bed2de;
 }
 
+/* Success popup overlay */
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 9, 14, 0.75);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease;
+}
+.popup {
+  background: linear-gradient(145deg, #0d2a3d, #061520);
+  border: 1px solid rgba(38, 178, 249, 0.35);
+  border-radius: 22px;
+  padding: 48px 40px;
+  max-width: 420px;
+  width: 90vw;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(38, 178, 249, 0.1);
+  animation: popIn 0.3s ease;
+}
+.popupIcon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #26b2f9, #6fcbf9);
+  color: #03090e;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.popup h3 {
+  font-size: 26px;
+  margin: 0 0 12px;
+  letter-spacing: -0.03em;
+}
+.popup p {
+  font-size: 15px;
+  color: #b6ccd9;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @media (max-width: 760px) {
   .footer {
     padding: 44px 6vw 25px;
