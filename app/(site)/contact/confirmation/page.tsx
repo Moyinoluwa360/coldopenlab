@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArrowIcon } from "@/components/ArrowIcon";
 
 export const metadata: Metadata = {
   title: "Discovery-Call Confirmation | Cold Open Lab",
@@ -19,7 +20,7 @@ export default function ConfirmationPage() {
         </p>
         <p>Calendly will send you a calendar invite with the date, time and meeting link.</p>
         <Link className="button" href="/blog">
-          Explore the blog <span aria-hidden="true">↗︎</span>
+          Explore the blog <ArrowIcon />
         </Link>
       </div>
     </section>

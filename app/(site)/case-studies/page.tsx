@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { content } from "@/lib/content";
 import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { ArrowIcon } from "@/components/ArrowIcon";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_META.caseStudies.title },
@@ -41,7 +42,7 @@ export default async function CaseStudiesPage() {
               <h2>Case studies are coming soon.</h2>
               <p>We&rsquo;re preparing approved work samples to share here.</p>
               <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                Book a discovery call <span aria-hidden="true">↗︎</span>
+                Book a discovery call <ArrowIcon />
               </Link>
             </div>
           )}

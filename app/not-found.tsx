@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/site";
+import { ArrowIcon } from "@/components/ArrowIcon";
 
 export default function NotFound() {
   return (
@@ -13,7 +14,7 @@ export default function NotFound() {
         </p>
         <p>
           <Link className="button" href="/">
-            Back to home <span aria-hidden="true">↗︎</span>
+            Back to home <ArrowIcon />
           </Link>
         </p>
         <p className="stack">

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Brand } from "./Brand";
 import { CALENDLY_URL, NAV_LINKS } from "@/lib/site";
+import { ArrowIcon } from "./ArrowIcon";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -53,7 +54,7 @@ export function Header() {
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
         >
-          Book a discovery call <span aria-hidden="true">↗︎</span>
+          Book a discovery call <ArrowIcon />
         </Link>
       </nav>
     </header>

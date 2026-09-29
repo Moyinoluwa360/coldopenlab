@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAdminUser } from "@/lib/auth";
 import { AdminNav } from "@/components/admin/AdminNav";
 import { LogoutButton } from "@/components/admin/LogoutButton";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import styles from "../admin.module.css";
 
 // Real session verification (Admin SDK) happens here, on every admin request.
@@ -21,7 +22,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         <AdminNav />
         <span className={styles.spacer} />
         <Link href="/" className={styles.viewSite} target="_blank">
-          View site ↗︎
+          View site <ArrowIcon />
         </Link>
         <LogoutButton />
       </header>

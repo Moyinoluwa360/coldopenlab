@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { CtaSection } from "@/components/CtaSection";
+import { ArrowIcon } from "@/components/ArrowIcon";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_META.services.title },
@@ -76,7 +77,7 @@ export default function ServicesPage() {
           </p>
           <p>
             <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </p>
           <div className="service-jump">
@@ -114,7 +115,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </p>
           <p className="small muted">
@@ -150,7 +151,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </p>
         </div>
@@ -180,7 +181,7 @@ export default function ServicesPage() {
           </div>
           <p>
             <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </p>
         </div>

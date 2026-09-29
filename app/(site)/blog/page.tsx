@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { content } from "@/lib/content";
 import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { formatDate } from "@/lib/format";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import styles from "./blog.module.css";
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default async function BlogIndexPage() {
                 <p className={styles.featuredExcerpt}>{featured.excerpt}</p>
                 <div className={styles.featuredMeta}>
                   <strong>Read article</strong>
-                  <span aria-hidden="true">↗︎</span>
+                  <ArrowIcon />
                   {featured.publishDate && <span>· {formatDate(featured.publishDate)}</span>}
                 </div>
               </div>
@@ -101,7 +102,7 @@ export default async function BlogIndexPage() {
                         <p className="small muted">{formatDate(post.publishDate)}</p>
                       )}
                       <Link className="text-link" href={`/blog/${post.slug}`}>
-                        Read article <span aria-hidden="true">↗︎</span>
+                        Read article <ArrowIcon />
                       </Link>
                     </div>
                   </article>
@@ -116,7 +117,7 @@ export default async function BlogIndexPage() {
                 call to talk through your messaging and content.
               </p>
               <Link className="button" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                Book a discovery call <span aria-hidden="true">↗︎</span>
+                Book a discovery call <ArrowIcon />
               </Link>
             </div>
           )}

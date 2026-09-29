@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { content } from "@/lib/content";
 import { RichText } from "@/components/RichText";
 import { CALENDLY_URL, SITE_NAME, getSiteUrl } from "@/lib/site";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import styles from "./case.module.css";
 
 export const revalidate = 300;
@@ -105,7 +106,7 @@ export default async function CaseStudyPage({ params }: Props) {
             <h2 className={styles.ctaTitle}>See how this could work for your business.</h2>
             <p>Book a discovery call to talk through your brand, marketing and communications.</p>
             <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </div>
           <p className={styles.backLink}>

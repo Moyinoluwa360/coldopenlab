@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ArrowIcon } from "./ArrowIcon";
 import styles from "./ContactForm.module.css";
 
 const MARKETING_OPTIONS = [
@@ -168,7 +169,7 @@ export function ContactForm() {
 
         <button className="button" type="submit" disabled={submitting}>
           {submitting ? "Submitting…" : "Submit and choose a call time"}{" "}
-          <span aria-hidden="true">↗︎</span>
+          <ArrowIcon />
         </button>
       </form>
     </div>

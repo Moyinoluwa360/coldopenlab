@@ -5,6 +5,7 @@ import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { CtaSection } from "@/components/CtaSection";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import { ArrowIcon } from "@/components/ArrowIcon";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_META.home.title },
@@ -53,10 +54,10 @@ export default async function HomePage() {
               prospective clients and customers find, trust and choose your business.
             </p>
             <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
             <Link className="text-link" href="/services">
-              Explore our services <span aria-hidden="true">↗︎</span>
+              Explore our services <ArrowIcon />
             </Link>
             <p className="small muted">For B2B businesses and consumer and lifestyle brands.</p>
           </div>
@@ -117,7 +118,7 @@ export default async function HomePage() {
               </p>
               <p className="offer-detail">Start with 90 days. Continue as your business needs.</p>
               <Link className="text-link" href="/services#ongoing-support">
-                See ongoing support <span aria-hidden="true">↗︎</span>
+                See ongoing support <ArrowIcon />
               </Link>
             </article>
             <article className="offer-card">
@@ -128,7 +129,7 @@ export default async function HomePage() {
                 prospective customers to take.
               </p>
               <Link className="text-link" href="/services#campaigns">
-                See campaign management <span aria-hidden="true">↗︎</span>
+                See campaign management <ArrowIcon />
               </Link>
             </article>
             <article className="offer-card">
@@ -139,7 +140,7 @@ export default async function HomePage() {
                 with leads.
               </p>
               <Link className="text-link" href="/services#events">
-                See event communications <span aria-hidden="true">↗︎</span>
+                See event communications <ArrowIcon />
               </Link>
             </article>
           </div>
@@ -188,7 +189,7 @@ export default async function HomePage() {
             website development is needed, we can bring in a partner.
           </p>
           <Link className="text-link" href="/services">
-            See what we handle <span aria-hidden="true">↗︎</span>
+            See what we handle <ArrowIcon />
           </Link>
         </div>
       </section>

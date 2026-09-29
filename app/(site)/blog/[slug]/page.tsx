@@ -6,6 +6,7 @@ import { content } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 import { RichText } from "@/components/RichText";
 import { CALENDLY_URL, SITE_NAME, getSiteUrl } from "@/lib/site";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import styles from "./post.module.css";
 
 export const revalidate = 300;
@@ -122,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
             <h2 className={styles.ctaTitle}>Make your website useful to the people checking your business.</h2>
             <p>Book a discovery call with Cold Open Lab to discuss your messaging and content.</p>
             <Link className="button button--dark" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Book a discovery call <span aria-hidden="true">↗︎</span>
+              Book a discovery call <ArrowIcon />
             </Link>
           </div>
           <p className={styles.backLink}>
