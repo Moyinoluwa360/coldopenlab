@@ -29,12 +29,17 @@ export async function POST(request: Request) {
   }
 
   try {
+    // Google Apps Script returns a 302 redirect after processing the POST.
+    // Node fetch follows 302 by converting POST→GET, which loses the body
+    // and means doPost() never fires. Using redirect:"manual" lets the
+    // script process the POST; a 302 back means it succeeded.
     const res = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ name, email, secret }),
+      redirect: "manual",
     });
-    if (!res.ok) {
+    if (!res.ok && res.status !== 302) {
       throw new Error(`Sheet webhook responded ${res.status}`);
     }
   } catch (err) {

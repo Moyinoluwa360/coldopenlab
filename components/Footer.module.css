@@ -55,6 +55,8 @@
   margin: 16px 0;
 }
 .newsletterFields input {
+  display: block;
+  width: 100%;
   margin-top: 8px;
   min-width: 0;
 }
@@ -156,8 +158,20 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .heading {
+    font-size: 28px;
+  }
   .newsletterFields {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .newsletterFields label {
+    margin-bottom: 4px;
+  }
+  .newsletter button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
   }
   .subscribeRow {
     flex-direction: column;

@@ -481,6 +481,15 @@ p {
   }
 }
 
+/* Force text (non-emoji) rendering for arrow/star glyphs across all platforms.
+   Unicode FE0E works on desktop but mobile browsers often ignore it;
+   font-variant-emoji is the reliable CSS-level override. */
+[aria-hidden="true"],
+.composition-star {
+  font-variant-emoji: text;
+  font-family: "Arial", "Helvetica Neue", sans-serif;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
