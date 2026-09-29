@@ -616,16 +616,14 @@ p {
   overflow: hidden;
 }
 .sales-card::before {
-  content: "↗";
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  line-height: 1;
+  content: "";
+  display: block;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(140deg, var(--blue), #c5edff);
-  color: var(--black);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Cpath d='M6 14L14 6M14 6H8M14 6v6' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 22px no-repeat,
+    linear-gradient(140deg, var(--blue), #c5edff);
   margin-bottom: 35px;
 }
 .sales-grid.capability-grid .sales-card::before {
