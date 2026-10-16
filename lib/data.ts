@@ -113,6 +113,7 @@ interface WpPost extends WpImage {
   modified?: string | null;
   seo?: WpSeo | null;
   categories?: { nodes?: { name?: string | null }[] | null } | null;
+  author?: { node?: { name?: string | null; avatar?: { url?: string | null } | null } | null } | null;
 }
 
 function mapBlog(post: WpPost): BlogPost {
@@ -127,6 +128,8 @@ function mapBlog(post: WpPost): BlogPost {
     published: true,
     featuredImageUrl: imageUrl(post),
     featuredImageAlt: imageAlt(post),
+    authorName: post.author?.node?.name ?? "",
+    authorAvatarUrl: post.author?.node?.avatar?.url ?? "",
     metaTitle: orUndefined(post.seo?.title ?? ""),
     metaDescription: orUndefined(post.seo?.metaDesc ?? ""),
     updatedAt: post.modified ?? undefined,
@@ -230,6 +233,7 @@ const BLOG_FIELDS = `
   featuredImage { node { sourceUrl altText } }
   seo { title metaDesc }
   categories { nodes { name } }
+  author { node { name avatar { url } } }
 `;
 
 export async function getPublishedBlogPosts(): Promise<BlogPost[]> {

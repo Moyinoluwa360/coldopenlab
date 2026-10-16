@@ -5,6 +5,7 @@ import { content } from "@/lib/content";
 import { CALENDLY_URL, PAGE_META } from "@/lib/site";
 import { formatDate } from "@/lib/format";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { AuthorByline } from "@/components/AuthorByline";
 import styles from "./blog.module.css";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default async function BlogIndexPage() {
                 {featured.category && <span className={styles.featuredTag}>{featured.category}</span>}
                 <h2 className={styles.featuredTitle}>{featured.title}</h2>
                 <p className={styles.featuredExcerpt}>{featured.excerpt}</p>
+                <AuthorByline name={featured.authorName} avatarUrl={featured.authorAvatarUrl} className={styles.featuredAuthor} />
                 <div className={styles.featuredMeta}>
                   <strong>Read article</strong>
                   <ArrowIcon />
@@ -98,6 +100,7 @@ export default async function BlogIndexPage() {
                         <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                       </h2>
                       <p>{post.excerpt}</p>
+                      <AuthorByline name={post.authorName} avatarUrl={post.authorAvatarUrl} className={styles.cardAuthor} />
                       {post.publishDate && (
                         <p className="small muted">{formatDate(post.publishDate)}</p>
                       )}

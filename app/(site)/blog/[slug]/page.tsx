@@ -7,6 +7,7 @@ import { formatDate } from "@/lib/format";
 import { RichText } from "@/components/RichText";
 import { CALENDLY_URL, SITE_NAME, getSiteUrl } from "@/lib/site";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { AuthorByline } from "@/components/AuthorByline";
 import styles from "./post.module.css";
 
 export const revalidate = 300;
@@ -59,7 +60,9 @@ export default async function BlogPostPage({ params }: Props) {
     image: post.featuredImageUrl || undefined,
     datePublished: post.publishDate || undefined,
     dateModified: post.updatedAt || post.publishDate || undefined,
-    author: { "@type": "Organization", name: SITE_NAME },
+    author: post.authorName
+      ? { "@type": "Person", name: post.authorName, image: post.authorAvatarUrl || undefined }
+      : { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME },
     mainEntityOfPage: `${getSiteUrl()}/blog/${post.slug}`,
   };
@@ -76,6 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
           {post.category && <span className={styles.tag}>{post.category}</span>}
           <h1 className={styles.title}>{post.title}</h1>
           <p className={`lead ${styles.lead}`}>{post.excerpt}</p>
+          <AuthorByline name={post.authorName} avatarUrl={post.authorAvatarUrl} className={styles.author} />
           <div className={styles.metaRow}>
             {post.publishDate && (
               <p className="small muted">Published {formatDate(post.publishDate)}</p>

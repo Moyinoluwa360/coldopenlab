@@ -1,0 +1,29 @@
+.byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.avatar,
+.initials {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+}
+.avatar {
+  object-fit: cover;
+}
+.initials {
+  display: grid;
+  place-items: center;
+  color: #175376;
+  background: #d7f1ff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}

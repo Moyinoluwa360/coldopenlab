@@ -12,6 +12,8 @@ export interface BlogPost {
   published: boolean;
   featuredImageUrl: string;
   featuredImageAlt: string;
+  authorName: string;
+  authorAvatarUrl: string;
   /** SEO overrides. Fall back to title/excerpt when blank. */
   metaTitle?: string;
   metaDescription?: string;

@@ -137,6 +137,12 @@
   color: var(--black);
   font-weight: 600;
 }
+.featuredAuthor {
+  margin: 0 0 18px;
+}
+.cardAuthor {
+  margin: 0 0 12px;
+}
 
 @media (max-width: 760px) {
   .featured {
